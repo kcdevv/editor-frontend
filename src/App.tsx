@@ -7,11 +7,11 @@ const App = () => {
   const [inputRoom, setInputRoom] = useState("");
   const [output, setOutput] = useState("");
   const [socket, setSocket] = useState<WebSocket | null>(null);
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL as string;
+
   useEffect(() => {
     if (!room) return;
     
-    const newSocket = new WebSocket(BACKEND_URL);
+    const newSocket = new WebSocket("ws://ballast.proxy.rlwy.net:26842");
     setSocket(newSocket);
     
     newSocket.onopen = () => {
