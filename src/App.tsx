@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     if (!room) return;
     
-    const newSocket = new WebSocket("wss://ballast.proxy.rlwy.net:26842");
+    const newSocket = new WebSocket("ws://ec2-52-66-255-189.ap-south-1.compute.amazonaws.com");
     setSocket(newSocket);
     
     newSocket.onopen = () => {
